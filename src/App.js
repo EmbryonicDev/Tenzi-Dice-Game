@@ -1,7 +1,8 @@
-
 function App() {
   return (
-    <header>app goes here</header>
+    <main id="main">
+      <div id="board"></div>
+    </main>
   );
 }
 

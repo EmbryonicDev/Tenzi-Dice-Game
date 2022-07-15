@@ -3,7 +3,7 @@ import Die from "./Die";
 
 function App() {
 
-  function randomDie() {
+  function allNewDies() {
     return (
       Math.ceil(Math.random() * 6)
     )
@@ -13,16 +13,16 @@ function App() {
     <main id="main">
       <div id="board">
         <div id='dieSet'>
-          <Die value={randomDie()} />
-          <Die value={randomDie()} />
-          <Die value={randomDie()} />
-          <Die value={randomDie()} />
-          <Die value={randomDie()} />
-          <Die value={randomDie()} />
-          <Die value={randomDie()} />
-          <Die value={randomDie()} />
-          <Die value={randomDie()} />
-          <Die value={randomDie()} />
+          <Die value={allNewDies()} />
+          <Die value={allNewDies()} />
+          <Die value={allNewDies()} />
+          <Die value={allNewDies()} />
+          <Die value={allNewDies()} />
+          <Die value={allNewDies()} />
+          <Die value={allNewDies()} />
+          <Die value={allNewDies()} />
+          <Die value={allNewDies()} />
+          <Die value={allNewDies()} />
         </div>
       </div>
     </main>

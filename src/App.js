@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import uniqid from 'uniqid';
 import Die from "./Die";
 
 function App() {
+  const [dice, setDice] = useState(allNewDice());
 
   function allNewDice() {
     const newDice = []
@@ -10,22 +12,15 @@ function App() {
     }
     return newDice
   }
-  console.log(allNewDice())
+
+  const diceElements = dice.map(die =>
+    <Die key={uniqid()} value={die} />)
 
   return (
     <main id="main">
       <div id="board">
         <div id='dieSet'>
-          <Die value={3} />
-          <Die value={6} />
-          <Die value={1} />
-          <Die value={4} />
-          <Die value={5} />
-          <Die value={5} />
-          <Die value={4} />
-          <Die value={1} />
-          <Die value={3} />
-          <Die value={6} />
+          {diceElements}
         </div>
       </div>
     </main>

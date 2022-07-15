@@ -11,7 +11,20 @@ function App() {
 
   return (
     <main id="main">
-      <div id="board"></div>
+      <div id="board">
+        <div id='dieSet'>
+          <Die value={randomDie()} />
+          <Die value={randomDie()} />
+          <Die value={randomDie()} />
+          <Die value={randomDie()} />
+          <Die value={randomDie()} />
+          <Die value={randomDie()} />
+          <Die value={randomDie()} />
+          <Die value={randomDie()} />
+          <Die value={randomDie()} />
+          <Die value={randomDie()} />
+        </div>
+      </div>
     </main>
   );
 }

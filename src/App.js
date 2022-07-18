@@ -10,6 +10,10 @@ function App() {
     return Math.ceil(Math.random() * 6);
   }
 
+  useEffect(() => {
+    console.log('Dice state changed')
+  }, [dice])
+
   function rollDice() {
     setDice(prevState => prevState.map(die => {
       return !die.isHeld ?

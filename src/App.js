@@ -67,7 +67,8 @@ function App() {
         <div id='dieSet'>{diceElements}</div>
         <button
           id='rollBtn'
-          onClick={rollDice}>{tenzies ? 'New Game' : 'Roll'}
+          onClick={rollDice}>
+          {tenzies ? 'New Game' : 'Roll'}
         </button>
       </div>
     </main>

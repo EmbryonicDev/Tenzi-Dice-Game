@@ -5,10 +5,14 @@ import Die from "./Die";
 function App() {
   const [dice, setDice] = useState(allNewDice());
 
+  function randomNum() {
+    return Math.ceil(Math.random() * 6);
+  }
+
   function rollDice() {
     setDice(prevState => prevState.map(die => {
       return !die.isHeld ?
-        { ...die, value: Math.ceil(Math.random() * 6) } :
+        { ...die, value: randomNum() } :
         die
     }))
   }
@@ -17,7 +21,7 @@ function App() {
     const newDice = []
     for (let i = 0; i < 10; i++) {
       newDice.push({
-        value: Math.ceil(Math.random() * 6),
+        value: randomNum(),
         isHeld: false,
         id: uniqid()
       })

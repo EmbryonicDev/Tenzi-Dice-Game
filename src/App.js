@@ -22,7 +22,7 @@ function App() {
   }
 
   const diceElements = dice.map(die =>
-    <Die key={uniqid()} value={die} />)
+    <Die key={uniqid()} value={die.value} />)
 
   return (
     <main id="main">

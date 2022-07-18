@@ -6,6 +6,7 @@ import Die from "./Die";
 function App() {
   const [dice, setDice] = useState(allNewDice());
   const [tenzies, setTenzies] = useState(false);
+  const [rollCounter, setRollCounter] = useState(0)
 
   function randomNum() {
     return Math.ceil(Math.random() * 6);
@@ -23,12 +24,14 @@ function App() {
     if (tenzies) {
       setDice(allNewDice());
       setTenzies(false);
+      setRollCounter(0);
     } else {
       setDice(prevState => prevState.map(die => {
         return !die.isHeld ?
           { ...die, value: randomNum() } :
           die
-      }))
+      }));
+      setRollCounter(prevState => prevState + 1)
     }
   }
 
@@ -76,6 +79,7 @@ function App() {
           onClick={rollDice}>
           {tenzies ? 'New Game' : 'Roll'}
         </button>
+        <h4>Number of Rolls: {rollCounter}</h4>
       </div>
     </main>
   );

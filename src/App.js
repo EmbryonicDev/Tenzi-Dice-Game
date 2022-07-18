@@ -11,7 +11,11 @@ function App() {
   }
 
   useEffect(() => {
-    console.log('Dice state changed')
+    if (dice.every(die => die.isHeld &&
+      die.value === dice[0].value)) {
+      setTenzies(true);
+      console.log("You won!")
+    }
   }, [dice])
 
   function rollDice() {

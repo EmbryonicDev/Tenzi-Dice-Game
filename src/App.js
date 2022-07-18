@@ -14,14 +14,15 @@ function App() {
     for (let i = 0; i < 10; i++) {
       newDice.push({
         value: Math.ceil(Math.random() * 6),
-        isHeld: false
+        isHeld: false,
+        id: uniqid()
       })
     }
     return newDice
   }
 
   const diceElements = dice.map(die =>
-    <Die key={uniqid()} value={die.value} isHeld={die.isHeld} />)
+    <Die key={die.id} value={die.value} isHeld={die.isHeld} />)
 
   return (
     <main id="main">

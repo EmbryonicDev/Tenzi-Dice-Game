@@ -6,7 +6,11 @@ function App() {
   const [dice, setDice] = useState(allNewDice());
 
   function rollDice() {
-    setDice(allNewDice())
+    setDice(prevState => prevState.map(die => {
+      return !die.isHeld ?
+        { ...die, value: Math.ceil(Math.random() * 6) } :
+        die
+    }))
   }
 
   function allNewDice() {

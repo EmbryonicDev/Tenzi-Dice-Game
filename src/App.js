@@ -45,12 +45,12 @@ function App() {
   }
 
   function holdDice(id) {
-
-    setDice(prevState => prevState.map(die => {
-      return die.id === id ?
-        { ...die, isHeld: !die.isHeld } :
-        die
-    }))
+    !tenzies &&
+      setDice(prevState => prevState.map(die => {
+        return die.id === id ?
+          { ...die, isHeld: !die.isHeld } :
+          die
+      }))
   }
 
   const diceElements = dice.map(die =>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import uniqid from 'uniqid';
+import Confetti from 'react-confetti';
 import Die from "./Die";
 
 function App() {

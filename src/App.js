@@ -16,7 +16,7 @@ function App() {
       die.value === dice[0].value)) {
       setTenzies(true);
       console.log("You won!")
-    }
+    };
   }, [dice])
 
   function rollDice() {
@@ -71,10 +71,16 @@ function App() {
   return (
     <main id="main">
       <div id="board">
+        {tenzies && <Confetti />}
         <h1 className="title">Tenzies</h1>
-        <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+        <p className="instructions">
+          Roll until all dice are the same. Click each die to freeze it at its current value between rolls.
+        </p>
         <div id='dieSet'>{diceElements}</div>
-        <button id='rollBtn' onClick={rollDice}>Roll</button>
+        <button
+          id='rollBtn'
+          onClick={rollDice}>{tenzies ? 'New Game' : 'Roll'}
+        </button>
       </div>
     </main>
   );

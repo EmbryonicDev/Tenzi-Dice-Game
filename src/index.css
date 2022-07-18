@@ -30,7 +30,19 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 25.6px;
+  /* gap: 25.6px; */
+}
+
+.title {
+  margin: 0;
+}
+
+.instructions {
+  margin: 0;
+  padding: 0 20px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 13px;
 }
 
 #dieSet {
@@ -38,6 +50,7 @@ body {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr 1fr;
   gap: 18.5px 18px;
+  margin: 26px 0;
 }
 
 .die {

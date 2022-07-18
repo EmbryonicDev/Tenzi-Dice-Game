@@ -20,11 +20,16 @@ function App() {
   }, [dice])
 
   function rollDice() {
-    setDice(prevState => prevState.map(die => {
-      return !die.isHeld ?
-        { ...die, value: randomNum() } :
-        die
-    }))
+    if (tenzies) {
+      setDice(allNewDice());
+      setTenzies(false);
+    } else {
+      setDice(prevState => prevState.map(die => {
+        return !die.isHeld ?
+          { ...die, value: randomNum() } :
+          die
+      }))
+    }
   }
 
   function allNewDice() {
@@ -54,7 +59,8 @@ function App() {
       value={die.value}
       isHeld={die.isHeld}
       holdDice={() => holdDice(die.id)}
-    />)
+    />
+  )
 
   return (
     <main id="main">

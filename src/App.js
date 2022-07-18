@@ -46,18 +46,6 @@ function App() {
         { ...die, isHeld: !die.isHeld } :
         die
     }))
-
-    // ↓ ↓ ↓ Different but longer way ↓ ↓ ↓ 
-    // setDice(prevState => {
-    //   const newArr = [];
-    //   for (let i = 0; i < prevState.length; i++) {
-    //     const oldDie = prevState[i];
-    //     oldDie.id === id
-    //       ? newArr.push({ ...oldDie, isHeld: !oldDie.isHeld })
-    //       : newArr.push(oldDie);
-    //   }
-    //   return newArr
-    // })
   }
 
   const diceElements = dice.map(die =>

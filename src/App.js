@@ -12,11 +12,10 @@ function App() {
   function allNewDice() {
     const newDice = []
     for (let i = 0; i < 10; i++) {
-      const diceObj = {
+      newDice.push({
         value: Math.ceil(Math.random() * 6),
         isHeld: false
-      }
-      newDice.push(diceObj)
+      })
     }
     return newDice
   }

@@ -97,8 +97,8 @@ function App() {
           onClick={rollDice}>
           {tenzies ? 'New Game' : 'Roll'}
         </button>
-        <h4>Number of Rolls: {rollCounter}</h4>
-        <h4>Best Game: {bestGame.length < 1 ? '?' : bestGame} Rolls</h4>
+        <h4 id='rollCounter'>Number of Rolls: {rollCounter}</h4>
+        <h4 id='bestGame'>Best Game: {bestGame.length < 1 ? '?' : bestGame} Rolls</h4>
       </div>
     </main>
   );

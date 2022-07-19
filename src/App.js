@@ -6,7 +6,8 @@ import Die from "./Die";
 function App() {
   const [dice, setDice] = useState(allNewDice());
   const [tenzies, setTenzies] = useState(false);
-  const [rollCounter, setRollCounter] = useState(0)
+  const [rollCounter, setRollCounter] = useState(0);
+  const [bestGame, setBestGame] = useState(localStorage.getItem('bestGame') || '')
 
   function randomNum() {
     return Math.ceil(Math.random() * 6);
@@ -19,6 +20,23 @@ function App() {
       console.log("You won!")
     };
   }, [dice])
+
+  useEffect(() => {
+    if (tenzies) {
+      setBestGame(prevState => {
+        if (prevState.length < 1) {
+          return rollCounter
+        } else {
+          if (prevState > rollCounter) {
+            return rollCounter
+          } else {
+            return prevState
+          }
+        }
+      });
+      localStorage.setItem('bestGame', bestGame);
+    }
+  }, [tenzies, rollCounter, bestGame]);
 
   function rollDice() {
     if (tenzies) {
@@ -80,9 +98,9 @@ function App() {
           {tenzies ? 'New Game' : 'Roll'}
         </button>
         <h4>Number of Rolls: {rollCounter}</h4>
+        <h4>Best Game: {bestGame.length < 1 ? '?' : bestGame} Rolls</h4>
       </div>
     </main>
   );
 }
-
 export default App;

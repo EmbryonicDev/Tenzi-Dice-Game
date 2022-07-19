@@ -17,7 +17,6 @@ function App() {
     if (dice.every(die => die.isHeld &&
       die.value === dice[0].value)) {
       setTenzies(true);
-      console.log("You won!")
     };
   }, [dice])
 
